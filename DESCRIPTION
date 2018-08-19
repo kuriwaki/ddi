@@ -1,9 +1,12 @@
 Package: ddi
 Type: Package
-Title: Computes d.d.i. (Data Defect Index) from Samples that may not be i.i.d.
+Title: d.d.i. (Data Defect Index) for non i.i.d. Samples
 Version: 0.0.1
 Author: Shiro Kuriwaki [aut, cre]
-Description: Implements the Data Defect Index from Meng (2018), Ann. Appl. Stat.
+Description: Implements the Meng's Data Defect Index in Meng, Xiao-Li. 2018.
+    Statistical paradises and paradoxes in big data (I): Law of large populations, 
+    big data paradox, and the 2016 US presidential election. Ann. Appl. Stat. 12 (2018), 
+    no. 2, 685–726. doi:10.1214/18-AOAS1161SF. 
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
