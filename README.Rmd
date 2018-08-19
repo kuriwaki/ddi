@@ -1,0 +1,15 @@
+---
+title: "d.d.i."
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install
+
+```{r, eval = FALSE}
+devtools::install_github("kuriwaki/ddi")
+```
+
