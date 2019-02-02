@@ -15,8 +15,7 @@
 #'
 #' @references Meng, Xiao-Li. Statistical paradises and paradoxes in big data (I):
 #' Law of large populations, big data paradox, and the 2016 US presidential election.
-#' Ann. Appl. Stat. 12 (2018), no. 2, 685--726. doi:10.1214/18-AOAS1161SF.
-#' https://projecteuclid.org/euclid.aoas/1532743473
+#' Ann. Appl. Stat. 12 (2018), no. 2, 685--726. \url{http://doi.org/10.1214/18-AOAS1161SF}
 #'
 #'
 ddc <- function(data = df, N = "N", n = "n", mu,  muhat, cv = NULL) {
