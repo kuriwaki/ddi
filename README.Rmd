@@ -1,5 +1,5 @@
 ---
-title: "d.d.i."
+title: "d.d.i. (Data Defect Index) for non i.i.d. Samples"
 output: github_document
 ---
 
@@ -7,9 +7,52 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+A simple set of functions to implements Meng's Data Defect Index (d.d.i.).  
+
+> Xiao-Li Meng. 2018. "Statistical paradises and paradoxes in big data (I): Law of large populations,  big data paradox, and the 2016 US presidential election." Annals of Applied  Statistics 12:2, 685–726. https://doi.org/10.1214/18-AOAS1161SF. 
+
+([ungated version](https://statistics.fas.harvard.edu/files/statistics-2/files/statistical_paradises_and_paradoxes.pdf))
+
+
 ## Install
 
 ```{r, eval = FALSE}
-devtools::install_github("kuriwaki/ddi")
+# install.packages("devtools")
+remotes::install_github("kuriwaki/ddi")
 ```
+
+
+
+# Usage
+
+With a dataframe with columns for a group's estimates and components of the formula, `ddc` computes the data defect correlation ($\rho$).
+
+An example with the 2016 Election, which looks like
+
+```{r, message = FALSE}
+library(ddi)
+library(tidyverse)
+
+data(g2016)
+g2016
+```
+
+Specify the column names for each component:
+```{r}
+ddcs <- ddc(g2016, 
+            N = "tot_votes",
+            n = "cces_n_vv",
+            mu = "pct_djt_voters", 
+            muhat = "cces_pct_djt_vv")
+```
+
+This returns:
+
+```{r}
+library(tibble)
+print(tibble(st = g2016$st, ddc = ddcs), n = 51)
+```
+
+
+A negative $\rho$ means  $\rho = \text{Cor}(\textit{Respond}, \textit{Trump Supporter}) < 0$, i.e. Trump supporters were less likely to respond. 
 
