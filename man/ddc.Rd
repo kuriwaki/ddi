@@ -23,9 +23,15 @@ is the correlation between response and group memembership. Currently both varia
 are binary. Squaring the d.d.c. is more useful for characterizing the asymptotics of
 MSE.
 }
+\examples{
+data(g2016)
+ddcs <- ddc(g2016, N = "tot_votes", n = "cces_n_vv", mu = "pct_djt_voters", muhat = "cces_pct_djt_vv")
+tibble(st = g2016$st, ddc = ddcs)
+
+
+}
 \references{
 Meng, Xiao-Li. Statistical paradises and paradoxes in big data (I):
 Law of large populations, big data paradox, and the 2016 US presidential election.
-Ann. Appl. Stat. 12 (2018), no. 2, 685--726. doi:10.1214/18-AOAS1161SF.
-https://projecteuclid.org/euclid.aoas/1532743473
+Ann. Appl. Stat. 12 (2018), no. 2, 685--726. \url{http://doi.org/10.1214/18-AOAS1161SF}
 }
