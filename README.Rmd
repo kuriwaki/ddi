@@ -27,7 +27,7 @@ remotes::install_github("kuriwaki/ddi")
 
 With a dataframe with columns for a group's estimates and components of the formula, `ddc` computes the data defect correlation ($\rho$).
 
-An example with the 2016 Election, which looks like
+An example dataset from the 2016 Election is included (this also serves as the replication dataset for the AOAS article). This looks like
 
 ```{r, message = FALSE}
 library(ddi)
@@ -37,22 +37,45 @@ data(g2016)
 g2016
 ```
 
-Specify the column names for each component:
+We can compute the data defect correlation just by plugging in some numbers. For example
 ```{r}
-ddcs <- ddc(g2016, 
-            N = "tot_votes",
-            n = "cces_n_vv",
-            mu = "pct_djt_voters", 
-            muhat = "cces_pct_djt_vv")
+ddc(mu = 62984824/136639786, muhat = 12284/35829, N = 136639786, n = 35829)
 ```
 
-This returns:
+and the d.d.i. is the square of that, about `r formatC(ddc(mu = 62984824/136639786, muhat = 12284/35829, N = 136639786, n = 35829)^2, digits = 7, format = "f")`. 
 
+we got these numbers by 
 ```{r}
-library(tibble)
-print(tibble(st = g2016$st, ddc = ddcs), n = 51)
+select(g2016, cces_totdjt_vv, cces_n_vv, tot_votes, votes_djt) %>%
+  summarize_all(sum)
 ```
 
+where 
+
+* `cces_totdjt_vv`: The count of Trump voters (among validated voters)
+* `cces_n_vv`: The count of CCES valiated voters (sample size)
+* `votes_djt`: Total votes for Trump
+* `tot_votes`: Total turnout
+* `cces_pct_djt_vv`: Estiamted vote share, `cces_totdjt_vv / cces_n_vv`
+* `pct_djt_voters`: Estiamted vote share, `votes_djt / tot_votes`
+
+
+The function also takes vectors as inputs:
+```{r}
+with(g2016, ddc(mu = pct_djt_voters,
+                muhat = cces_pct_djt_vv, 
+                N = tot_votes, 
+                n = cces_n_vv))
+```
+
+so can be implemented in a tibble as well:
+```{r}
+transmute(g2016, st,
+          ddc = ddc(mu = pct_djt_voters, 
+                    muhat = cces_pct_djt_vv, 
+                    N = tot_votes,
+                    n = cces_n_vv))
+```
 
 A negative $\rho$ means  $\rho = \text{Cor}(\textit{Respond}, \textit{Trump Supporter}) < 0$, i.e. Trump supporters were less likely to respond. 
 
