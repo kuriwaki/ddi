@@ -4,18 +4,23 @@
 \alias{ddc}
 \title{Data Defect Correlation}
 \usage{
-ddc(data = df, N = "N", n = "n", mu, muhat, cv = NULL)
+ddc(mu, muhat, N, n, cv = NULL)
 }
 \arguments{
-\item{data}{dataframe}
+\item{mu}{Vector of population quantity of interest}
 
-\item{N}{variable name (char) for population size. Default assumes \code{"N"}}
+\item{muhat}{Vector for sample estimate}
 
-\item{n}{variable name (char) for sample size. Default assumes \code{"n"}}
+\item{N}{Vector of population size}
 
-\item{mu}{variable name (char) for population quantity of interest}
+\item{n}{Vector of sample size}
 
-\item{muhat}{variable name (char) for sample estimate}
+\item{cv}{Coeffcient of variation  of the weights, if survey weights exist.
+\code{sd(w) / mean(w)}}
+}
+\value{
+A vector of d.d.c. of the same length of the input, or a scalar if
+ all input variables are scalars.
 }
 \description{
 The Data Defect Correlation (d.d.c.) is simply the square root of d.d.i. d.d.c.
@@ -24,9 +29,24 @@ are binary. Squaring the d.d.c. is more useful for characterizing the asymptotic
 MSE.
 }
 \examples{
+library(tibble)
+library(dplyr)
+
 data(g2016)
-ddcs <- ddc(g2016, N = "tot_votes", n = "cces_n_vv", mu = "pct_djt_voters", muhat = "cces_pct_djt_vv")
-tibble(st = g2016$st, ddc = ddcs)
+
+# 1. scalar input
+select(g2016, cces_totdjt_vv, cces_n_vv, tot_votes, votes_djt) \%>\%
+  summarize_all(sum)
+
+## plug those numbers in
+ddc(mu = 62984824/136639786, muhat = 12284/35829, N = 136639786, n = 35829)
+
+# 2. vector input using "with"
+with(g2016, ddc(mu = pct_djt_voters, muhat = cces_pct_djt_vv, N = tot_votes, n = cces_n_vv))
+
+# 3. vector input in tidy tibble
+transmute(g2016, st,
+ ddc = ddc(mu = pct_djt_voters, muhat = cces_pct_djt_vv, N = tot_votes, n = cces_n_vv))
 
 
 }
