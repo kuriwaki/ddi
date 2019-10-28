@@ -22,10 +22,15 @@ remotes::install_github("kuriwaki/ddi")
 # Usage
 
 With a dataframe with columns for a group’s estimates and components of
-the formula, `ddc` computes the data defect correlation (\(\rho\)).
+the formula, `ddc` computes the data defect correlation (ρ).
 
-An example dataset from the 2016 Election is included (this also serves
-as the replication dataset for the AOAS article). This looks like
+An example dataset from the 2016 US PresidentialElection is included
+(this also serves as the replication dataset for the AOAS article). The
+dataset compares official election results with estimates the
+Cooperative Congressional Election Study (CCES), the largest political
+survey in the US. The CCES micro-data is fully publicl and accessible at
+[its website](https://cces.gov.harvard.edu/). Here, we produce
+state-level estimates which are documented with `help(g2016)`.
 
 ``` r
 library(ddi)
@@ -132,6 +137,5 @@ transmute(g2016, st,
     ## 10 FL    -0.00297 
     ## # … with 41 more rows
 
-A negative \(\rho\) means
-\(\rho = \text{Cor}(\textit{Respond}, \textit{Trump Supporter}) < 0\),
+A negative ρ means ρ = Cor(*Respond*, 1(*Trump Supporter*)) \< 0,
 i.e. Trump supporters were less likely to respond.
