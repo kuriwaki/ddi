@@ -3,7 +3,7 @@
 \docType{data}
 \name{g2016}
 \alias{g2016}
-\title{2016 General Election}
+\title{2016 General Election Results and Estimates}
 \format{A data frame with 51 rows (all U.S. states and D.C.)
 \describe{
   \item{state}{state name}
@@ -19,18 +19,31 @@
   ...
 }}
 \source{
-\url{https://github.com/kuriwaki/poll_error}. For an explanation in the
-context of d.d.i., see Meng 2018 (\url{http://doi.org/10.1214/18-AOAS1161SF})
+Cooperative Congressional Election Study (CCES) \url{https://cces.gov.harvard.edu/}
+ and United States Elecetion Project \url{http://www.electproject.org/2016g}.
+ Created under \url{https://github.com/kuriwaki/poll_error}.
 }
 \usage{
 g2016
 }
 \description{
-Information about Donald Trump's voteshare in each U.S. state,
+Donald Trump's voteshare in each U.S. state,
 with survey estimates from the Cooperative Congressional Election Study.
 }
-\details{
-A dataset containing the prices and other attributes of almost 54,000
-diamonds.
+\examples{
+library(dplyr)
+data(g2016)
+
+transmute(g2016,
+          st,
+          ddc = ddc(mu = pct_djt_voters,
+                    muhat = cces_pct_djt_vv,
+                    N = tot_votes,
+                    n = cces_n_vv))
+
+}
+\references{
+For an explanation in the
+context of d.d.i., see Meng 2018 (\url{http://doi.org/10.1214/18-AOAS1161SF})
 }
 \keyword{datasets}
