@@ -3,24 +3,24 @@
 \docType{data}
 \name{g2016}
 \alias{g2016}
-\title{2016 General Election Results and Estimates}
+\title{2016 General Election Results and Survey Estimates}
 \format{A data frame with 51 rows (all U.S. states and D.C.)
 \describe{
-  \item{state}{state name}
-  \item{st}{state name, abbreviation}
-  \item{pct_djt_voters}{Donald J. Trump's voteshare, the estimand}
-  \item{cces_pct_djt_vv}{CCES unweighted proportion of Trump support, one possible estimate}
-  \item{cces_pct_djtrund_vv}{CCES unweighted proportion counting Republican undecideds as Trump voters}
-  \item{voted_djt}{Total number of votes by Trump}
-  \item{tot_votes}{Turnout in Presidential race}
-  \item{cces_n_vv}{Validated voters in survey sample. Sample size for estimate}
-  \item{vap}{Voting Age Population}
-  \item{vep}{Voting Elgible Population}
+  \item{state}{state (full name)}
+  \item{st}{state (abbreviation).}
+  \item{pct_djt_voters}{Donald J. Trump's voteshare, the estimand.}
+  \item{cces_pct_djt_vv}{CCES unweighted proportion of Trump support, one estimate.}
+  \item{cces_pct_djtrund_vv}{CCES unweighted proportion counting Republican undecideds as Trump voters.}
+  \item{voted_djt}{Total number of votes by Trump.}
+  \item{tot_votes}{Turnout in Presidential as total number of votes cast.}
+  \item{cces_n_vv}{Validated voters in survey sample. Used as the denominator for the above CCES estimates.}
+  \item{vap}{Voting Age Population in the state.}
+  \item{vep}{Voting Elgible Population in the state (estimate from the US Election Project).}
   ...
 }}
 \source{
 Cooperative Congressional Election Study (CCES) \url{https://cces.gov.harvard.edu/}
- and United States Elecetion Project \url{http://www.electproject.org/2016g}.
+ and the United States Election Project \url{http://www.electproject.org/2016g}.
  Created under \url{https://github.com/kuriwaki/poll_error}.
 }
 \usage{
@@ -28,7 +28,10 @@ g2016
 }
 \description{
 Donald Trump's voteshare in each U.S. state,
-with survey estimates from the Cooperative Congressional Election Study.
+with survey estimates from the Cooperative Congressional Election Study
+(pre-election wave). See Meng (2018) referenced below for more details.
+We focus on unweighted estimates to capture the response patterns, before
+correcting for any imbalances through weights.
 }
 \examples{
 library(dplyr)
