@@ -1,6 +1,6 @@
 Package: ddi
 Type: Package
-Title: d.d.i. (Data Defect Index) for non i.i.d. Samples
+Title: d.d.i. (Data Defect Index) of samples that may not be i.i.d.
 Version: 0.0.1
 Author: Shiro Kuriwaki [aut, cre]
 Description: Implements Meng's Data Defect Index. Xiao-Li Meng. 2018.
