@@ -9,4 +9,4 @@ Description: Implements Meng's Data Defect Index. Xiao-Li Meng. 2018.
     Statistics 12:2, 685–726. https://doi.org/10.1214/18-AOAS1161SF. 
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
