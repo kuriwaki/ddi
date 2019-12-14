@@ -12,6 +12,9 @@ Description: Implements Meng's Data Defect Index. Xiao-Li Meng. 2018.
     big data paradox, and the 2016 US presidential election." Annals of Applied 
     Statistics 12:2, 685–726. https://doi.org/10.1214/18-AOAS1161SF. 
 Encoding: UTF-8
+URL: https://github.com/kuriwaki/ddi
+BugReports: http://github.com/kuriwaki/ddi/issues
+License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 7.0.2
 Suggests: 
