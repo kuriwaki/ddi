@@ -4,7 +4,7 @@ d.d.i. (Data Defect Index) for non i.i.d. Samples
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.org/kuriwaki/ddi.svg?branch=master)](https://travis-ci.org/kuriwaki/ddi)
+status](https://travis-ci.com/kuriwaki/ddi.svg?branch=master)](https://travis-ci.com/kuriwaki/ddi)
 <!-- badges: end -->
 
 A simple set of functions to implements Meng’s Data Defect Index
