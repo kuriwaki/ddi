@@ -16,6 +16,7 @@
 #'   \item{cces_pct_djtrund_vv}{CCES unweighted proportion counting Republican undecideds as Trump voters.}
 #'   \item{votes_djt}{Total number of votes by Trump.}
 #'   \item{tot_votes}{Turnout in Presidential as total number of votes cast.}
+#'   \item{cces_totdjt_vv}{Validated voters intending to vote for Trump. Used as the numerator for the above CCES estimates.}
 #'   \item{cces_n_vv}{Validated voters in survey sample. Used as the denominator for the above CCES estimates.}
 #'   \item{vap}{Voting Age Population in the state.}
 #'   \item{vep}{Voting Elgible Population in the state (estimate from the US Election Project).}
