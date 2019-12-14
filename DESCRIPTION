@@ -2,7 +2,11 @@ Package: ddi
 Type: Package
 Title: d.d.i. (Data Defect Index) of samples that may not be i.i.d.
 Version: 0.0.1
-Author: Shiro Kuriwaki [aut, cre]
+Authors@R: c(person(given = "Shiro",
+             family = "Kuriwaki",
+             role = c("aut", "cre"),
+             email = "shirokuriwaki@gmail.com",
+             comment = c(ORCID = "0000-0002-5687-2647")))
 Description: Implements Meng's Data Defect Index. Xiao-Li Meng. 2018.
     "Statistical paradises and paradoxes in big data (I): Law of large populations, 
     big data paradox, and the 2016 US presidential election." Annals of Applied 
