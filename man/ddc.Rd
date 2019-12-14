@@ -15,8 +15,9 @@ ddc(mu, muhat, N, n, cv = NULL)
 
 \item{n}{Vector of sample size}
 
-\item{cv}{Coeffcient of variation  of the weights, if survey weights exist.
-\code{sd(w) / mean(w)}}
+\item{cv}{Coeffcient of variation of the weights, if survey weights exist and
+\code{muhat} is the weighted proportion. The coefficient of variation is a
+summary statistic computed by \code{sd(weights) / mean(weights)}.}
 }
 \value{
 A vector of d.d.c. of the same length of the input, or a scalar if
