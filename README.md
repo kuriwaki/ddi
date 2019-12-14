@@ -1,6 +1,9 @@
 d.d.i. (Data Defect Index) for non i.i.d. Samples
 ================
 
+![Travis-CI Build
+Status](https://travis-ci.org/kuriwaki/ddi.svg?branch=master)
+
 A simple set of functions to implements Meng’s Data Defect Index
 (d.d.i.).
 
@@ -24,11 +27,11 @@ remotes::install_github("kuriwaki/ddi")
 With a dataframe with columns for a group’s estimates and components of
 the formula, `ddc` computes the data defect correlation (ρ).
 
-An example dataset from the 2016 US PresidentialElection is included
+An example dataset from the 2016 US Presidential Election is included
 (this also serves as the replication dataset for the AOAS article). The
 dataset compares official election results with estimates the
 Cooperative Congressional Election Study (CCES), the largest political
-survey in the US. The CCES micro-data is fully publicl and accessible at
+survey in the US. The CCES micro-data is fully public and accessible at
 [its website](https://cces.gov.harvard.edu/). Here, we produce
 state-level estimates which are documented with `help(g2016)`.
 
@@ -40,22 +43,21 @@ data(g2016)
 g2016
 ```
 
-    ## # A tibble: 51 x 11
-    ##    state st    pct_djt_voters cces_pct_djt_vv cces_pct_djtrun…
-    ##    <chr> <chr>          <dbl>           <dbl>            <dbl>
-    ##  1 Alab… AL            0.621           0.408            0.428 
-    ##  2 Alas… AK            0.513           0.306            0.319 
-    ##  3 Ariz… AZ            0.487           0.423            0.445 
-    ##  4 Arka… AR            0.606           0.416            0.434 
-    ##  5 Cali… CA            0.316           0.285            0.305 
-    ##  6 Colo… CO            0.433           0.350            0.371 
-    ##  7 Conn… CT            0.409           0.294            0.318 
-    ##  8 Dela… DE            0.419           0.329            0.349 
-    ##  9 Dist… DC            0.0409          0.0575           0.0690
-    ## 10 Flor… FL            0.490           0.403            0.422 
-    ## # … with 41 more rows, and 6 more variables: cces_totdjt_vv <dbl>,
-    ## #   votes_djt <dbl>, tot_votes <dbl>, cces_n_vv <dbl>, vap <dbl>,
-    ## #   vep <dbl>
+    ## # A tibble: 51 x 10
+    ##    state st    pct_djt_voters cces_pct_djt_vv cces_pct_djtrun… votes_djt
+    ##    <chr> <chr>          <dbl>           <dbl>            <dbl>     <dbl>
+    ##  1 Alab… AL            0.621           0.408            0.428    1318255
+    ##  2 Alas… AK            0.513           0.306            0.319     163387
+    ##  3 Ariz… AZ            0.487           0.423            0.445    1252401
+    ##  4 Arka… AR            0.606           0.416            0.434     684872
+    ##  5 Cali… CA            0.316           0.285            0.305    4483810
+    ##  6 Colo… CO            0.433           0.350            0.371    1202484
+    ##  7 Conn… CT            0.409           0.294            0.318     673215
+    ##  8 Dela… DE            0.419           0.329            0.349     185127
+    ##  9 Dist… DC            0.0409          0.0575           0.0690     12723
+    ## 10 Flor… FL            0.490           0.403            0.422    4617886
+    ## # … with 41 more rows, and 4 more variables: tot_votes <dbl>, cces_n_vv <dbl>,
+    ## #   vap <dbl>, vep <dbl>
 
 We can compute the data defect correlation just by plugging in some
 numbers. For
@@ -72,24 +74,24 @@ and the d.d.i. is the square of that, about 0.0000147.
 we got these numbers by
 
 ``` r
-select(g2016, cces_totdjt_vv, cces_n_vv, tot_votes, votes_djt) %>%
+select(g2016, cces_pct_djt_vv, cces_n_vv, tot_votes, votes_djt) %>%
   summarize_all(sum)
 ```
 
     ## # A tibble: 1 x 4
-    ##   cces_totdjt_vv cces_n_vv tot_votes votes_djt
-    ##            <dbl>     <dbl>     <dbl>     <dbl>
-    ## 1          12284     35829 136639786  62984824
+    ##   cces_pct_djt_vv cces_n_vv tot_votes votes_djt
+    ##             <dbl>     <dbl>     <dbl>     <dbl>
+    ## 1            17.5     35829 136639786  62984824
 
 where
 
   - `cces_totdjt_vv`: The count of Trump voters (among validated voters)
-  - `cces_n_vv`: The count of CCES valiated voters (sample size)
+  - `cces_n_vv`: The count of CCES validated voters (sample size)
   - `votes_djt`: Total votes for Trump
   - `tot_votes`: Total turnout
-  - `cces_pct_djt_vv`: Estiamted vote share, `cces_totdjt_vv /
+  - `cces_pct_djt_vv`: Estimated vote share, `cces_totdjt_vv /
     cces_n_vv`
-  - `pct_djt_voters`: Estiamted vote share, `votes_djt / tot_votes`
+  - `pct_djt_voters`: Estimated vote share, `votes_djt / tot_votes`
 
 The function also takes vectors as inputs:
 

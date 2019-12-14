@@ -7,6 +7,8 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+![Travis-CI Build Status](https://travis-ci.org/kuriwaki/ddi.svg?branch=master)
+
 A simple set of functions to implements Meng's Data Defect Index (d.d.i.).  
 
 > Xiao-Li Meng. 2018. "Statistical paradises and paradoxes in big data (I): Law of large populations,  big data paradox, and the 2016 US presidential election." Annals of Applied  Statistics 12:2, 685–726. https://doi.org/10.1214/18-AOAS1161SF. 
@@ -27,7 +29,7 @@ remotes::install_github("kuriwaki/ddi")
 
 With a dataframe with columns for a group's estimates and components of the formula, `ddc` computes the data defect correlation (&rho;).
 
-An example dataset from the 2016 US PresidentialElection is included (this also serves as the replication dataset for the AOAS article). The dataset compares official election results with estimates the Cooperative Congressional Election Study (CCES), the largest political survey in the US. The CCES micro-data is fully publicl and accessible at [its website](https://cces.gov.harvard.edu/). Here, we produce state-level estimates which are documented with `help(g2016)`.
+An example dataset from the 2016 US Presidential Election is included (this also serves as the replication dataset for the AOAS article). The dataset compares official election results with estimates the Cooperative Congressional Election Study (CCES), the largest political survey in the US. The CCES micro-data is fully public and accessible at [its website](https://cces.gov.harvard.edu/). Here, we produce state-level estimates which are documented with `help(g2016)`.
 
 ```{r, message = FALSE}
 library(ddi)
@@ -46,18 +48,18 @@ and the d.d.i. is the square of that, about `r formatC(ddc(mu = 62984824/1366397
 
 we got these numbers by 
 ```{r}
-select(g2016, cces_totdjt_vv, cces_n_vv, tot_votes, votes_djt) %>%
+select(g2016, cces_pct_djt_vv, cces_n_vv, tot_votes, votes_djt) %>%
   summarize_all(sum)
 ```
 
 where 
 
 * `cces_totdjt_vv`: The count of Trump voters (among validated voters)
-* `cces_n_vv`: The count of CCES valiated voters (sample size)
+* `cces_n_vv`: The count of CCES validated voters (sample size)
 * `votes_djt`: Total votes for Trump
 * `tot_votes`: Total turnout
-* `cces_pct_djt_vv`: Estiamted vote share, `cces_totdjt_vv / cces_n_vv`
-* `pct_djt_voters`: Estiamted vote share, `votes_djt / tot_votes`
+* `cces_pct_djt_vv`: Estimated vote share, `cces_totdjt_vv / cces_n_vv`
+* `pct_djt_voters`: Estimated vote share, `votes_djt / tot_votes`
 
 
 The function also takes vectors as inputs:
