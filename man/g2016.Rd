@@ -11,12 +11,11 @@
   \item{pct_djt_voters}{Donald J. Trump's voteshare, the estimand.}
   \item{cces_pct_djt_vv}{CCES unweighted proportion of Trump support, one estimate.}
   \item{cces_pct_djtrund_vv}{CCES unweighted proportion counting Republican undecideds as Trump voters.}
-  \item{voted_djt}{Total number of votes by Trump.}
+  \item{votes_djt}{Total number of votes by Trump.}
   \item{tot_votes}{Turnout in Presidential as total number of votes cast.}
   \item{cces_n_vv}{Validated voters in survey sample. Used as the denominator for the above CCES estimates.}
   \item{vap}{Voting Age Population in the state.}
   \item{vep}{Voting Elgible Population in the state (estimate from the US Election Project).}
-  ...
 }}
 \source{
 Cooperative Congressional Election Study (CCES) \url{https://cces.gov.harvard.edu/}

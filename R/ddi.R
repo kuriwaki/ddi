@@ -23,7 +23,7 @@
 #' data(g2016)
 #'
 #' # 1. scalar input
-#' select(g2016, cces_totdjt_vv, cces_n_vv, tot_votes, votes_djt) %>%
+#' select(g2016, cces_pct_djt_vv, cces_n_vv, tot_votes, votes_djt) %>%
 #'   summarize_all(sum)
 #'
 #' ## plug those numbers in
