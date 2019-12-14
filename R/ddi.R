@@ -9,8 +9,8 @@
 #' @param muhat Vector for sample estimate
 #' @param N Vector of population size
 #' @param n Vector of sample size
-#' @param cv Coeffcient of variation  of the weights, if survey weights exist.
-#'   \code{sd(w) / mean(w)}
+#' @param cv Coeffcient of variation of the weights, if survey weights exist. The
+#'   coefficient of variation can be computed by  \code{sd(weights) / mean(weuights)}.
 #'
 #' @return A vector of d.d.c. of the same length of the input, or a scalar if
 #'  all input variables are scalars.
@@ -44,8 +44,6 @@
 #' @export
 ddc <- function(mu, muhat, N, n, cv = NULL) {
 
-  if (!is.null(cv)) cv <- data[[cv]]
-
   ## parts
   one_over_sqrtN <- 1 / sqrt(N)
   diff_mu <- muhat - mu
@@ -57,12 +55,11 @@ ddc <- function(mu, muhat, N, n, cv = NULL) {
   ## sigma, "Problem Difficulty"
   s2hat <- mu * (1 - mu)
 
-  # adjustment factor for SEs when there are wieghts
+  # adjustment factor for SEs when there are weights
   if (!is.null(cv)) {
     A <- sqrt(1 + (cv^2 / one_minus_f))
     one_over_A <- 1 /A
   }
-
 
   ## estimate of rho
   if (!is.null(cv))
