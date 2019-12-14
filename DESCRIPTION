@@ -1,6 +1,6 @@
 Package: ddi
 Type: Package
-Title: d.d.i. (Data Defect Index) of samples that may not be i.i.d.
+Title: d.d.i. (Data Defect Index) of samples that may not be i.i.d
 Version: 0.0.1
 Authors@R: c(person(given = "Shiro",
              family = "Kuriwaki",
@@ -17,5 +17,9 @@ BugReports: http://github.com/kuriwaki/ddi/issues
 License: GPL (>= 2)
 LazyData: true
 RoxygenNote: 7.0.2
+Depends:
+    R (>= 2.10)
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    dplyr,
+    tibble
