@@ -16,7 +16,7 @@
   \item{cces_totdjt_vv}{Validated voters intending to vote for Trump. Used as the numerator for the above CCES estimates.}
   \item{cces_n_vv}{Validated voters in survey sample. Used as the denominator for the above CCES estimates.}
   \item{vap}{Voting Age Population in the state.}
-  \item{vep}{Voting Elgible Population in the state (estimate from the US Election Project).}
+  \item{vep}{Voting Eligible Population in the state (estimate from the US Election Project).}
 }}
 \source{
 Cooperative Congressional Election Study (CCES) \url{https://cces.gov.harvard.edu/}

@@ -11,9 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 [![Travis build status](https://travis-ci.com/kuriwaki/ddi.svg?branch=master)](https://travis-ci.com/kuriwaki/ddi)
 <!-- badges: end -->
 
-A simple set of functions to implements Meng's Data Defect Index (d.d.i.).  
+A simple set of functions to implement the Data Defect Index (d.d.i.), described in:
 
-> Xiao-Li Meng. 2018. "Statistical paradises and paradoxes in big data (I): Law of large populations,  big data paradox, and the 2016 US presidential election." Annals of Applied  Statistics 12:2, 685–726. <doi:10.1214/18-AOAS1161SF>. 
+> Xiao-Li Meng. 2018. "Statistical Paradises and Paradoxes in big data (I): Law of Large Populations,  Big Data Paradox, and the 2016 US Presidential Election." _Annals of Applied  Statistics_ 12:2, 685–726. [doi:10.1214/18-AOAS1161SF](http://doi.org/10.1214/18-AOAS1161SF). 
 
 ([ungated version](https://statistics.fas.harvard.edu/files/statistics-2/files/statistical_paradises_and_paradoxes.pdf))
 

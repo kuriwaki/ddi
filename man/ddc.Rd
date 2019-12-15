@@ -15,7 +15,7 @@ ddc(mu, muhat, N, n, cv = NULL)
 
 \item{n}{Vector of sample size}
 
-\item{cv}{Coeffcient of variation of the weights, if survey weights exist and
+\item{cv}{Coefficient of variation of the weights, if survey weights exist and
 \code{muhat} is the weighted proportion. The coefficient of variation is a
 summary statistic computed by \code{sd(weights) / mean(weights)}.}
 }
@@ -24,10 +24,12 @@ A vector of d.d.c. of the same length of the input, or a scalar if
  all input variables are scalars.
 }
 \description{
-The Data Defect Correlation (d.d.c.) is simply the square root of d.d.i. d.d.c.
-is the correlation between response and group memembership. Currently both variables
-are binary. Squaring the d.d.c. is more useful for characterizing the asymptotics of
-MSE.
+The Data Defect Correlation (ddc) is the correlation between response and
+group membership. It quantifies the correlation between the outcome of interest
+and the selection  into the sample; when the sample selection is independent
+across members of the population, the ddc is zero.  Currently both variables
+are binary. The data defect index (ddi) is the square of ddc. Squaring the
+d.d.c. is more useful for characterizing the asymptotics of ' MSE.
 }
 \examples{
 library(tibble)
@@ -52,7 +54,7 @@ transmute(g2016, st,
 
 }
 \references{
-Meng, Xiao-Li. Statistical paradises and paradoxes in big data (I):
-Law of large populations, big data paradox, and the 2016 US presidential election.
+Meng, Xiao-Li. Statistical Paradises and Paradoxes in Big Data (I):
+Law of Large Populations, Big Data Paradox, and the 2016 US Presidential Election.
 Ann. Appl. Stat. 12 (2018), no. 2, 685--726. <doi:10.1214/18-AOAS1161SF>
 }
