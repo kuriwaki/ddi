@@ -10,7 +10,7 @@ Authors@R: c(person(given = "Shiro",
 Description: Implements Meng's Data Defect Index. Xiao-Li Meng. 2018.
     "Statistical paradises and paradoxes in big data (I): Law of large populations, 
     big data paradox, and the 2016 US presidential election." Annals of Applied 
-    Statistics 12:2, 685–726. https://doi.org/10.1214/18-AOAS1161SF. 
+    Statistics 12:2, 685–726. <doi:10.1214/18-AOAS1161SF>. 
 Encoding: UTF-8
 URL: https://github.com/kuriwaki/ddi
 BugReports: http://github.com/kuriwaki/ddi/issues

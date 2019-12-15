@@ -39,5 +39,5 @@
 #'
 #'
 #' @references   For an explanation in the
-#' context of d.d.i., see Meng 2018 (\url{http://doi.org/10.1214/18-AOAS1161SF})
+#' context of d.d.i., see Meng 2018 (<doi:10.1214/18-AOAS1161SF>)
 "g2016"

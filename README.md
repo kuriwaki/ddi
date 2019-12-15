@@ -13,7 +13,7 @@ A simple set of functions to implements Meng’s Data Defect Index
 > Xiao-Li Meng. 2018. “Statistical paradises and paradoxes in big data
 > (I): Law of large populations, big data paradox, and the 2016 US
 > presidential election.” Annals of Applied Statistics 12:2, 685–726.
-> <https://doi.org/10.1214/18-AOAS1161SF>.
+> <doi:10.1214/18-AOAS1161SF>.
 
 ([ungated
 version](https://statistics.fas.harvard.edu/files/statistics-2/files/statistical_paradises_and_paradoxes.pdf))
@@ -59,8 +59,8 @@ g2016
     ##  8 Dela… DE            0.419           0.329            0.349     185127
     ##  9 Dist… DC            0.0409          0.0575           0.0690     12723
     ## 10 Flor… FL            0.490           0.403            0.422    4617886
-    ## # … with 41 more rows, and 4 more variables: tot_votes <dbl>, cces_n_vv <dbl>,
-    ## #   vap <dbl>, vep <dbl>
+    ## # … with 41 more rows, and 4 more variables: tot_votes <dbl>,
+    ## #   cces_n_vv <dbl>, vap <dbl>, vep <dbl>
 
 We can compute the data defect correlation just by plugging in some
 numbers. For
