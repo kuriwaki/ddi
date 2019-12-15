@@ -1,6 +1,6 @@
 Package: ddi
 Type: Package
-Title: The Data Defect Index for Samples That May Not Be i.i.d.
+Title: The Data Defect Index for Samples That May Not Be IID
 Version: 0.0.1
 Authors@R: c(person(given = "Shiro",
              family = "Kuriwaki",
@@ -8,7 +8,7 @@ Authors@R: c(person(given = "Shiro",
              email = "shirokuriwaki@gmail.com",
              comment = c(ORCID = "0000-0002-5687-2647")))
 Description: Implements Meng's Data Defect Index (ddi), which represents
-    the degree of sample bias relative to the population. The data defect 
+    the degree of sample bias relative to an iid sample. The data defect 
     correlation (ddc) represents the correlation between the outcome of interest
     and the selection  into the sample; when the sample selection is independent
     across the population, the ddc is zero. Details are in Xiao-Li Meng. 2018. 
