@@ -54,7 +54,7 @@ transmute(g2016, st,
 
 }
 \references{
-Meng, Xiao-Li. Statistical Paradises and Paradoxes in Big Data (I):
-Law of Large Populations, Big Data Paradox, and the 2016 US Presidential Election.
-Ann. Appl. Stat. 12 (2018), no. 2, 685--726. <doi:10.1214/18-AOAS1161SF>
+Meng, Xiao-Li (2018) <doi:10.1214/18-AOAS1161SF>, "Statistical Paradises
+and Paradoxes in Big Data (I): Law of Large Populations, Big Data Paradox,
+and the 2016 US Presidential Election." Annals of Applied Statistics 12:2, 685--726.
 }
