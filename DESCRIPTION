@@ -10,11 +10,12 @@ Authors@R: c(person(given = "Shiro",
 Description: Implements Meng's data defect index (ddi), which represents
     the degree of sample bias relative to an iid sample. The data defect 
     correlation (ddc) represents the correlation between the outcome of interest
-    and the selection  into the sample; when the sample selection is independent
+    and the selection into the sample; when the sample selection is independent
     across the population, the ddc is zero. Details are in Meng (2018) 
     <doi:10.1214/18-AOAS1161SF>, "Statistical Paradises and Paradoxes in Big Data (I): 
     Law of Large Populations, Big Data Paradox, and the 2016 US Presidential 
-    Election."
+    Election." Survey estimates from the Cooperative Congressional Election Study 
+    (CCES) is included to replicate the article's results. 
 Encoding: UTF-8
 URL: https://github.com/kuriwaki/ddi
 BugReports: http://github.com/kuriwaki/ddi/issues
