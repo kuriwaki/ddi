@@ -1,7 +1,7 @@
 Package: ddi
 Type: Package
 Title: The Data Defect Index for Samples that May not be IID
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: c(person(given = "Shiro",
              family = "Kuriwaki",
              role = c("aut", "cre"),

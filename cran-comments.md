@@ -6,12 +6,13 @@
 ## R CMD check results
 
 ```
-── R CMD check results ────────────────────────────────────────── ddi 0.0.1 ────
-Duration: 14.2s
+── R CMD check results ────────────────────────────────────────── ddi 0.1.0 ────
+Duration: 13.4s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
 R CMD check succeeded
+
 ```
 
 * This will be a new CRAN release.
