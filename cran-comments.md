@@ -14,8 +14,13 @@ Duration: 14.2s
 R CMD check succeeded
 ```
 
-* This is a new release.
+* This will be a new CRAN release.
 
 # Submissions
 
+## 2029-12-23
+
+Edited citation style of reference article and capitalization (e1a07d00)
+
+## 2019-12-15
 Submitted on 2019-12-14 and 2019-12-15 (twice), returned for resubmission.
