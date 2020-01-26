@@ -1,5 +1,5 @@
 ---
-title: "d.d.i. (Data Defect Index) for non i.i.d. Samples"
+title: "ddi: The Data Defect Index for Samples that May not be iid"
 output: github_document
 ---
 

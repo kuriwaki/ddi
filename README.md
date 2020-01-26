@@ -1,4 +1,4 @@
-d.d.i. (Data Defect Index) for non i.i.d. Samples
+ddi: The Data Defect Index for Samples that May not be iid
 ================
 
 <!-- badges: start -->
