@@ -20,11 +20,17 @@ A simple set of functions to implement the Data Defect Index (d.d.i.), described
 
 ## Install
 
+This package is currently on CRAN (0.1.0).
+
 ```{r, eval = FALSE}
-# install.packages("devtools")
-remotes::install_github("kuriwaki/ddi")
+install.packages("ddi")
 ```
 
+Development versions can be downloaded via:
+
+```{r, eval  = FALSE}
+remotes::install_github("kuriwaki/ddi")
+```
 
 
 # Usage

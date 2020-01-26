@@ -20,8 +20,15 @@ version](https://statistics.fas.harvard.edu/files/statistics-2/files/statistical
 
 ## Install
 
+This package is currently on CRAN (0.1.0).
+
 ``` r
-# install.packages("devtools")
+install.packages("ddi")
+```
+
+Development versions can be downloaded via:
+
+``` r
 remotes::install_github("kuriwaki/ddi")
 ```
 
@@ -46,25 +53,24 @@ data(g2016)
 g2016
 ```
 
-    ## # A tibble: 51 x 10
-    ##    state st    pct_djt_voters cces_pct_djt_vv cces_pct_djtrun… votes_djt
-    ##    <chr> <chr>          <dbl>           <dbl>            <dbl>     <dbl>
-    ##  1 Alab… AL            0.621           0.408            0.428    1318255
-    ##  2 Alas… AK            0.513           0.306            0.319     163387
-    ##  3 Ariz… AZ            0.487           0.423            0.445    1252401
-    ##  4 Arka… AR            0.606           0.416            0.434     684872
-    ##  5 Cali… CA            0.316           0.285            0.305    4483810
-    ##  6 Colo… CO            0.433           0.350            0.371    1202484
-    ##  7 Conn… CT            0.409           0.294            0.318     673215
-    ##  8 Dela… DE            0.419           0.329            0.349     185127
-    ##  9 Dist… DC            0.0409          0.0575           0.0690     12723
-    ## 10 Flor… FL            0.490           0.403            0.422    4617886
-    ## # … with 41 more rows, and 4 more variables: tot_votes <dbl>, cces_n_vv <dbl>,
-    ## #   vap <dbl>, vep <dbl>
+    ## # A tibble: 51 x 11
+    ##    state st    pct_djt_voters cces_totdjt_vv cces_pct_djt_vv cces_pct_djtrun…
+    ##    <chr> <chr>          <dbl>          <dbl>           <dbl>            <dbl>
+    ##  1 Alab… AL            0.621             159          0.408            0.428 
+    ##  2 Alas… AK            0.513              22          0.306            0.319 
+    ##  3 Ariz… AZ            0.487             372          0.423            0.445 
+    ##  4 Arka… AR            0.606             117          0.416            0.434 
+    ##  5 Cali… CA            0.316             899          0.285            0.305 
+    ##  6 Colo… CO            0.433             232          0.350            0.371 
+    ##  7 Conn… CT            0.409             111          0.294            0.318 
+    ##  8 Dela… DE            0.419              50          0.329            0.349 
+    ##  9 Dist… DC            0.0409              5          0.0575           0.0690
+    ## 10 Flor… FL            0.490            1107          0.403            0.422 
+    ## # … with 41 more rows, and 5 more variables: votes_djt <dbl>, tot_votes <dbl>,
+    ## #   cces_n_vv <dbl>, vap <dbl>, vep <dbl>
 
 We can compute the data defect correlation just by plugging in some
-numbers. For
-example
+numbers. For example
 
 ``` r
 ddc(mu = 62984824/136639786, muhat = 12284/35829, N = 136639786, n = 35829)
