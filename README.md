@@ -5,6 +5,8 @@ ddi: The Data Defect Index for Samples that May not be iid
 
 [![Travis build
 status](https://travis-ci.com/kuriwaki/ddi.svg?branch=master)](https://travis-ci.com/kuriwaki/ddi)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ddi)](https://CRAN.R-project.org/package=ddi)
 <!-- badges: end -->
 
 A simple set of functions to implement the Data Defect Index (d.d.i.),

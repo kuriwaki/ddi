@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/kuriwaki/ddi.svg?branch=master)](https://travis-ci.com/kuriwaki/ddi)
+[![CRAN status](https://www.r-pkg.org/badges/version/ddi)](https://CRAN.R-project.org/package=ddi)
 <!-- badges: end -->
 
 A simple set of functions to implement the Data Defect Index (d.d.i.), described in:
